@@ -16,6 +16,29 @@
 
  
    <div class="container">
+    <div class="card">
+      <div class="face face1">
+        <div class="content">
+            <i class="fab fa-windows"></i>            
+          <h3>[튜토리얼]</h3>
+          <br>
+          <h3>Easy</h3>
+        </div>
+      </div>
+      <div class="face face2">
+        <div class="content">
+          <br>
+          <p> Points : 50pt</p>
+          <br>
+          <p> Examiner : 장현호</p>
+          <br>
+          <div class="triggers">
+            <label for="popup-1">Challenge</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
       <div class="card">
         <div class="face face1">
           <div class="content">
@@ -33,7 +56,7 @@
             <p> Examiner : 김광운</p>
             <br>
             <div class="triggers">
-              <label for="popup-1">Challenge</label>
+              <label for="popup-2">Challenge</label>
             </div>
           </div>
         </div>
@@ -56,7 +79,7 @@
           <p> Examiner : 장현호</p>
           <br>
           <div class="triggers">
-            <label for="popup-2">Challenge</label>
+            <label for="popup-3">Challenge</label>
           </div>
         </div>
       </div>
@@ -79,7 +102,7 @@
           <p> Examiner : 김광운</p>
           <br>
           <div class="triggers">
-            <label for="popup-3">Challenge</label>
+            <label for="popup-4">Challenge</label>
           </div>
         </div>
       </div>
@@ -103,7 +126,7 @@
         <p> Examiner : 김광운</p>
         <br>
         <div class="triggers">
-          <label for="popup-4">Challenge</label>
+          <label for="popup-5">Challenge</label>
         </div>
       </div>
     </div>
@@ -126,7 +149,7 @@
       <p> Examiner : 최승용</p>
       <br>
       <div class="triggers">
-        <label for="popup-5">Challenge</label>
+        <label for="popup-6">Challenge</label>
       </div>
     </div>
   </div>
@@ -150,7 +173,7 @@
       <p> Examiner : 최승용</p>
       <br>
       <div class="triggers">
-        <label for="popup-6">Challenge</label>
+        <label for="popup-7">Challenge</label>
       </div>
     </div>
   </div>
@@ -173,7 +196,7 @@
         <p> Examiner : 장현호</p>
         <br>
         <div class="triggers">
-          <label for="popup-7">Challenge</label>
+          <label for="popup-8">Challenge</label>
         </div>
       </div>
     </div>
@@ -234,14 +257,14 @@
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
-      Challenge1
+      [튜토리얼]
     </div>
     <div class="txt">
-      <p><b>Welcome</b></p>
+      <p><b>확장자 알아보기</b></p>
       <br>
-      <p>CUHA CTF를 참여해주셔서 감사합니다.</p>
-      <p>Hint : CUHA CTF 페이지를 잘 살펴보세요</p>
-     
+      <p>이 파일의 원래 확장자는 txt입니다. 확장자를 txt로 바꾸고 파일을 열어보세요.</p>
+      <p><a href='misc/tutorial.jpg'>tutorial.jpg</a></p>
+
     </div>
     <form action="/challenge/flag" method="post">
     <div class="footer">
@@ -258,17 +281,19 @@
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
-      Challenge2
+      Challenge1
     </div>
     <div class="txt">
-      <p><b>Discord</b></p>
+      <p><b>Welcome</b></p>
       <br>
-      <p>CUHA CTF 2022의 디스코드를 잘 살펴보세요</p>
+      <p>CUHA CTF를 참여해주셔서 감사합니다.</p>
+      <p>Hint : CUHA CTF 페이지를 잘 살펴보세요</p>
+     
     </div>
     <form action="/challenge/flag" method="post">
     <div class="footer">
       <button class="btn" type="submit" method="post">Flag</button>
-      <input type="hidden" name="challenge_title" value="misc2">
+      <input type="hidden" name="challenge_title" value="misc1">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
       <label class="close" for="popup-2">Close</label>
     </div>
@@ -276,7 +301,29 @@
 </div>
 </form>
 
- <input type="checkbox" class="vcms__popup-check" name="popup-3" id="popup-3">
+<input type="checkbox" class="vcms__popup-check" name="popup-3" id="popup-3">
+<div class="vcms__popup">
+  <div class="inner">
+    <div class="header">
+      Challenge2
+    </div>
+    <div class="txt">
+      <p><b>Discord</b></p>
+      <br>
+      <p>CUHA Frashman CTF 2023의 디스코드를 잘 살펴보세요</p>
+    </div>
+    <form action="/challenge/flag" method="post">
+    <div class="footer">
+      <button class="btn" type="submit" method="post">Flag</button>
+      <input type="hidden" name="challenge_title" value="misc2">
+      <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+      <label class="close" for="popup-3">Close</label>
+    </div>
+  </div>
+</div>
+</form>
+
+ <input type="checkbox" class="vcms__popup-check" name="popup-4" id="popup-4">
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
@@ -286,19 +333,19 @@
       <p><b>coffee</b></p>
       <br>
       <p>커피 한 잔 하면서 하세요</p>
-      <p><a href='misc/download_misc3'>coffee.jpg</a></p>
+      <p><a href='misc/coffee.jpg'>coffee.jpg</a></p>
     </div>
     <form action="/challenge/flag" method="post">
     <div class="footer">
       <button class="btn" type="submit" method="post">Flag</button>
       <input type="hidden" name="challenge_title" value="misc3">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
-      <label class="close" for="popup-3">Close</label>
+      <label class="close" for="popup-4">Close</label>
     </div>
   </div>
 </div>
 </form>
-<input type="checkbox" class="vcms__popup-check" name="popup-4" id="popup-4">
+<input type="checkbox" class="vcms__popup-check" name="popup-5" id="popup-5">
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
@@ -308,35 +355,12 @@
       <p><b>dig_flag</b></p>
       <br>
       <p>은닉처를 파보면 플래그가 나올 것 같아요</p>
-      <p><a href='misc/download_misc4'>dig_flag.jpg</a></p>
+      <p><a href='misc/dig_flag.jpg'>dig_flag.jpg</a></p>
     </div>
     <form action="/challenge/flag" method="post">
     <div class="footer">
       <button class="btn" type="submit" method="post">Flag</button>
       <input type="hidden" name="challenge_title" value="misc4">
-      <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
-      <label class="close" for="popup-4">Close</label>
-    </div>
-  </div>
-</div>
-</form>
-
-<input type="checkbox" class="vcms__popup-check" name="popup-5" id="popup-5">
-<div class="vcms__popup">
-  <div class="inner">
-    <div class="header">
-      Challenge5
-    </div>
-    <div class="txt">
-     <p><b>QR code</b></p>
-     <br>
-     <p>QR 코드가 분리되고 말았어요. 원상복구 하실 수 있으신가요?</p>
-     <p><a href='misc/download_misc5'>QR_ctf.png</a></p>
-    </div>
-    <form action="/challenge/flag" method="post">
-    <div class="footer">
-      <button class="btn" type="submit" method="post">Flag</button>
-      <input type="hidden" name="challenge_title" value="misc5">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
       <label class="close" for="popup-5">Close</label>
     </div>
@@ -348,20 +372,18 @@
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
-      Challenge6
+      Challenge5
     </div>
     <div class="txt">
-     <p><b>SHOW_ME_THE_GOLD</b></p>
+     <p><b>QR code</b></p>
      <br>
-     <p>리그오브레전드를 플레이 중인데, 이미지의 아랫 부분이 잘려 골드가 얼마 있는지를 확인 할 수 없어요. 
-        다시 늘려주면 좋을 것 같아요.</p>
-        <p>CUHA{FULL_ITEM_GOLD_골드량}</p>
-     <p><a href='misc/download_misc6'>ctf.zip</a></p>
+     <p>QR 코드가 분리되고 말았어요. 원상복구 하실 수 있으신가요?</p>
+     <p><a href='misc/QR_ctf.png'>QR_ctf.png</a></p>
     </div>
     <form action="/challenge/flag" method="post">
     <div class="footer">
       <button class="btn" type="submit" method="post">Flag</button>
-      <input type="hidden" name="challenge_title" value="misc6">
+      <input type="hidden" name="challenge_title" value="misc5">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
       <label class="close" for="popup-6">Close</label>
     </div>
@@ -370,6 +392,31 @@
 </form>
 
 <input type="checkbox" class="vcms__popup-check" name="popup-7" id="popup-7">
+<div class="vcms__popup">
+  <div class="inner">
+    <div class="header">
+      Challenge6
+    </div>
+    <div class="txt">
+     <p><b>SHOW_ME_THE_GOLD</b></p>
+     <br>
+     <p>리그오브레전드를 플레이 중인데, 이미지의 아랫 부분이 잘려 골드가 얼마 있는지를 확인 할 수 없어요. 
+        다시 늘려주면 좋을 것 같아요.</p>
+        <p>CUHA{FULL_ITEM_GOLD_골드량}</p>
+     <p><a href='misc/ctf.zip'>ctf.zip</a></p>
+    </div>
+    <form action="/challenge/flag" method="post">
+    <div class="footer">
+      <button class="btn" type="submit" method="post">Flag</button>
+      <input type="hidden" name="challenge_title" value="misc6">
+      <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+      <label class="close" for="popup-7">Close</label>
+    </div>
+  </div>
+</div>
+</form>
+
+<input type="checkbox" class="vcms__popup-check" name="popup-8" id="popup-8">
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
@@ -386,7 +433,7 @@
       <button class="btn" type="submit" method="post">Flag</button>
       <input type="hidden" name="challenge_title" value="misc7">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
-      <label class="close" for="popup-7">Close</label>
+      <label class="close" for="popup-8">Close</label>
     </div>
   </div>
 </div>

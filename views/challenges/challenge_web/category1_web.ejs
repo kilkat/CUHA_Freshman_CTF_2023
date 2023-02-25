@@ -16,6 +16,29 @@
 
 
     <div class="container">
+
+      <div class="card">
+        <div class="face face1">
+          <div class="content">
+             <i class="fab fa-windows"></i>            
+            <h3>[튜토리얼]</h3>
+            <br>
+            <h3>Easy</h3>
+          </div>
+        </div>
+        <div class="face face2">
+          <div class="content">
+            <br>
+            <p> Points : 50</p>
+            <br>
+            <p> Examiner : 장현호</p>
+            <br>
+            <div class="triggers">
+              <label for="popup-1">Challenge</label>
+            </div>
+          </div>
+        </div>
+     </div>
       <div class="card">
         <div class="face face1">
           <div class="content">
@@ -33,7 +56,7 @@
             <p> Examiner : 최승용</p>
             <br>
             <div class="triggers">
-              <label for="popup-1">Challenge</label>
+              <label for="popup-2">Challenge</label>
             </div>
           </div>
         </div>
@@ -56,7 +79,7 @@
           <p> Examiner : 김광운</p>
           <br>
           <div class="triggers">
-            <label for="popup-2">Challenge</label>
+            <label for="popup-3">Challenge</label>
           </div>
         </div>
       </div>
@@ -79,7 +102,7 @@
             <p> Examiner : 유지민</p>
             <br>
             <div class="triggers">
-              <label for="popup-3">Challenge</label>
+              <label for="popup-4">Challenge</label>
             </div>
           </div>
         </div>
@@ -102,7 +125,7 @@
           <p> Examiner : 유지민</p>
           <br>
           <div class="triggers">
-            <label for="popup-4">Challenge</label>
+            <label for="popup-5">Challenge</label>
           </div>
         </div>
       </div>
@@ -238,13 +261,13 @@
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
-      Challenge1
+      [튜토리얼]
     </div>
     <div class="txt">
-      <p><b>Robot</b></p>
+      <p><b>URL 사용법</b></p>
       <br>
-      <p>로봇에 대한 가이드를 찾아보세요</p>
-      <p><a href='web/web1'>Robot</a></p>  
+      <p>flag 페이지에 플래그가 있습니다. URL을 이용해서 이동하세요.</p>
+      <p><a href='web/tutorial'>tutorial</a></p>  
     </div>
     <form action="/challenge/flag" method="post">
     <div class="footer">
@@ -261,6 +284,29 @@
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
+      Challenge1
+    </div>
+    <div class="txt">
+      <p><b>Robot</b></p>
+      <br>
+      <p>로봇에 대한 가이드를 찾아보세요</p>
+      <p><a href='web/web1'>Robot</a></p>  
+    </div>
+    <form action="/challenge/flag" method="post">
+    <div class="footer">
+      <button class="btn" type="submit" method="post">Flag</button>
+      <input type="hidden" name="challenge_title" value="web1">
+      <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+      <label class="close" for="popup-2">Close</label>
+    </div>
+  </div>
+</div>
+</form>
+
+<input type="checkbox" class="vcms__popup-check" name="popup-3" id="popup-3">
+<div class="vcms__popup">
+  <div class="inner">
+    <div class="header">
       Challenge2
     </div>
     <div class="txt">
@@ -274,14 +320,14 @@
       <button class="btn" type="submit" method="post">Flag</button>
       <input type="hidden" name="challenge_title" value="web2">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
-      <label class="close" for="popup-2">Close</label>
+      <label class="close" for="popup-3">Close</label>
     </div>
   </div>
 </div>
 </form>
 
 
- <input type="checkbox" class="vcms__popup-check" name="popup-3" id="popup-3">
+ <input type="checkbox" class="vcms__popup-check" name="popup-4" id="popup-4">
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
@@ -292,19 +338,19 @@
       <br>
       <p>이 SQL은 매우 쉽습니다</p>
       <p>Link: <a href='web/web3'>Easy Peasy sql</a></p>
-      <p>Hint : <a href='web/download_web3'>Easy_Peasy_sql_chall.js</a></p>  
+      <p>Hint : <a href='web/Easy_Peasy_sql_chall.js'>Easy_Peasy_sql_chall.js</a></p>  
     </div>
     <form action="/challenge/flag" method="post">
     <div class="footer">
       <button class="btn" type="submit" method="post">Flag</button>
       <input type="hidden" name="challenge_title" value="web3">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
-      <label class="close" for="popup-3">Close</label>
+      <label class="close" for="popup-4">Close</label>
     </div>
   </div>
 </div>
 </form>
-<input type="checkbox" class="vcms__popup-check" name="popup-4" id="popup-4">
+<input type="checkbox" class="vcms__popup-check" name="popup-5" id="popup-5">
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
@@ -315,14 +361,14 @@
       <br>
       <p>Do you like SQL INJECTION?</p>
       <p>Link: <a href='web/web4'>like SQL INJECTION</a></p>
-      <p>Hint: <a href='web/download_web4'>like_injection_chall.js</a></p>  
+      <p>Hint: <a href='web/like_injection_chall.js'>like_injection_chall.js</a></p>  
     </div>
     <form action="/challenge/flag" method="post">
     <div class="footer">
       <button class="btn" type="submit" method="post">Flag</button>
       <input type="hidden" name="challenge_title" value="web4">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
-      <label class="close" for="popup-4">Close</label>
+      <label class="close" for="popup-5">Close</label>
     </div>
   </div>
 </div>

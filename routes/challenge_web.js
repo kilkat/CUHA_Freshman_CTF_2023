@@ -18,7 +18,32 @@ router.get("/", (req, res) => {
     }
 });
 
+router.get("/tutorial", (req, res) => {
+    if(!req.session.is_logined) {
+        res.send("<script>alert('로그인 후 이용해주세요');location.href='/login';</script>");
+    } else {
+        res.render("challenges/challenge_web/tutorial/index.ejs");
+    }
+});
+
+router.get("/tutorial/flag", (req, res) => {
+    if(!req.session.is_logined) {
+        res.send("<script>alert('로그인 후 이용해주세요');location.href='/login';</script>");
+    } else {
+        res.render("challenges/challenge_web/tutorial/flag.ejs");
+    }
+});
+
+
 router.get("/web1", (req, res) => {
+    if(!req.session.is_logined) {
+        res.send("<script>alert('로그인 후 이용해주세요');location.href='/login';</script>");
+    } else {
+        res.render("challenges/challenge_web/robots/index.ejs");
+    }
+});
+
+router.get("/web1/robots.txt", (req, res) => {
     if(!req.session.is_logined) {
         res.send("<script>alert('로그인 후 이용해주세요');location.href='/login';</script>");
     } else {
@@ -29,6 +54,14 @@ router.get("/web1", (req, res) => {
 router.get('/web1/robots.txt', (req, res) => {
   res.render("challenges/challenge_web/robots/robots.ejs");
 })
+
+router.get("/web1/admin", (req, res) => {
+    if(!req.session.is_logined) {
+        res.send("<script>alert('로그인 후 이용해주세요');location.href='/login';</script>");
+    } else {
+        res.render("challenges/challenge_web/robots/index.ejs");
+    }
+});
 
 router.get('/web1/admin', (req, res) => {
   res.render("challenges/challenge_web/robots/admin.ejs");
@@ -54,16 +87,26 @@ router.get("/web4", (req, res) => {
 
 router.post("/web4/submit", controller_web4.challenge_web4);
 
-router.get('/download_web3', (req, res, next) => {
-    const text = 'Easy_Peasy_sql_chall.js';  
-    res.setHeader('Content-Disposition', `attachment; filename=${text}`); // 이게 핵심 
-    res.sendFile(path.join(__dirname, '../public/challenges_file/web', 'Easy_Peasy_sql_chall.js'));
-  });
+router.get("/Easy_Peasy_sql_chall.js", (req, res) => {
+    if(!req.session.is_logined) {
+        res.send("<script>alert('로그인 후 이용해주세요');location.href='/login';</script>");
+    }
+    else {
+        const text = 'Easy_Peasy_sql_chall.js';  
+        res.setHeader('Content-Disposition', `attachment; filename=${text}`); // 이게 핵심 
+        res.sendFile(path.join(__dirname, '../public/challenges_file/web', 'Easy_Peasy_sql_chall.js'));
+    }
+});
 
-router.get('/download_web4', (req, res, next) => {
-  const text = 'like_injection_chall.js';  
-  res.setHeader('Content-Disposition', `attachment; filename=${text}`); // 이게 핵심 
-  res.sendFile(path.join(__dirname, '../public/challenges_file/web', 'like_injection_chall.js'));
+router.get("/like_injection_chall.js", (req, res) => {
+    if(!req.session.is_logined) {
+        res.send("<script>alert('로그인 후 이용해주세요');location.href='/login';</script>");
+    }
+    else {
+        const text = 'like_injection_chall.js';  
+        res.setHeader('Content-Disposition', `attachment; filename=${text}`); // 이게 핵심 
+        res.sendFile(path.join(__dirname, '../public/challenges_file/web', 'like_injection_chall.js'));
+    }
 });
 
 module.exports = router;

@@ -16,6 +16,30 @@
 
  
    <div class="container">
+
+    <div class="card">
+      <div class="face face1">
+        <div class="content">
+           <i class="fab fa-windows"></i>            
+          <h3>[튜토리얼]</h3>
+          <br>
+          <h3>Easy</h3>
+        </div>
+      </div>
+      <div class="face face2">
+        <div class="content">
+          <br>
+          <p> Points : 50pt</p>
+          <br>
+          <p> Examiner : 장현호</p>
+          <br>
+          <div class="triggers">
+            <label for="popup-1">Challenge</label>
+          </div>
+        </div>
+      </div>
+   </div>
+
       <div class="card">
         <div class="face face1">
           <div class="content">
@@ -33,7 +57,7 @@
             <p> Examiner : 장현호</p>
             <br>
             <div class="triggers">
-              <label for="popup-1">Challenge</label>
+              <label for="popup-2">Challenge</label>
             </div>
           </div>
         </div>
@@ -57,7 +81,7 @@
           <p> Examiner : 장현호</p>
           <br>
           <div class="triggers">
-            <label for="popup-2">Challenge</label>
+            <label for="popup-3">Challenge</label>
           </div>
         </div>
       </div>
@@ -81,20 +105,12 @@
         <p> Examiner : 장현호</p>
         <br>
         <div class="triggers">
-          <label for="popup-3">Challenge</label>
+          <label for="popup-4">Challenge</label>
         </div>
       </div>
     </div>
  </div>
-     
-     
-     
-     
-     
-     
-   </div>
 
-   <div class="container">
     <div class="card">
       <div class="face face1">
         <div class="content">
@@ -112,7 +128,7 @@
           <p> Examiner : 장현호</p>
           <br>
           <div class="triggers">
-            <label for="popup-4">Challenge</label>
+            <label for="popup-5">Challenge</label>
           </div>
         </div>
       </div>
@@ -135,12 +151,12 @@
         <p> Examiner : 장현호</p>
         <br>
         <div class="triggers">
-          <label for="popup-5">Challenge</label>
+          <label for="popup-6">Challenge</label>
         </div>
       </div>
     </div>
  </div>
-   
+</div>
    
 <!-- 
  <div class="card">
@@ -234,7 +250,30 @@
   </div>
 </div>
 -->
- <input type="checkbox" class="vcms__popup-check" name="popup-1" id="popup-1">
+
+<input type="checkbox" class="vcms__popup-check" name="popup-1" id="popup-1">
+<div class="vcms__popup">
+  <div class="inner">
+    <div class="header">
+      [튜토리얼]
+    </div>
+    <div class="txt">
+      <p><b>Just Reverse</b></p>
+      <br>
+      <p>}!!sdrawkcab_daeR{AHUC</p>
+    </div>
+    <form action="/challenge/flag" method="post">
+    <div class="footer">
+      <button class="btn" type="submit" method="post">Flag</button>
+      <input type="hidden" name="challenge_title" value="crypto1">
+      <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+      <label class="close" for="popup-1">Close</label>
+    </div>
+  </div>
+</div>
+</form>
+
+ <input type="checkbox" class="vcms__popup-check" name="popup-2" id="popup-2">
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
@@ -253,12 +292,12 @@
       <button class="btn" type="submit" method="post">Flag</button>
       <input type="hidden" name="challenge_title" value="crypto1">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
-      <label class="close" for="popup-1">Close</label>
+      <label class="close" for="popup-2">Close</label>
     </div>
   </div>
 </div>
 </form>
-<input type="checkbox" class="vcms__popup-check" name="popup-2" id="popup-2">
+<input type="checkbox" class="vcms__popup-check" name="popup-3" id="popup-3">
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
@@ -277,13 +316,13 @@
       <button class="btn" type="submit" method="post">Flag</button>
       <input type="hidden" name="challenge_title" value="crypto2">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
-      <label class="close" for="popup-2">Close</label>
+      <label class="close" for="popup-3">Close</label>
     </div>
   </div>
 </div>
 </form>
 
-<input type="checkbox" class="vcms__popup-check" name="popup-3" id="popup-3">
+<input type="checkbox" class="vcms__popup-check" name="popup-4" id="popup-4">
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
@@ -296,20 +335,20 @@
          키는 CUHACTF2022 입니다.
       </p>
       <p>Hint: Ciphertext ⊕ Plaintext</p>
-      <p><a href='crypto/download_crypto1'>odt-IV-adb6be87eb09b76d.dat</a></p>
+      <p><a href='crypto/odt-IV-adb6be87eb09b76d.dat'>odt-IV-adb6be87eb09b76d.dat</a></p>
     </div>
     <form action="/challenge/flag" method="post">
     <div class="footer">
       <button class="btn" type="submit" method="post">Flag</button>
       <input type="hidden" name="challenge_title" value="crypto3">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
-      <label class="close" for="popup-3">Close</label>
+      <label class="close" for="popup-4">Close</label>
     </div>
   </div>
 </div>
 </form>
 
-<input type="checkbox" class="vcms__popup-check" name="popup-4" id="popup-4">
+<input type="checkbox" class="vcms__popup-check" name="popup-5" id="popup-5">
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
@@ -326,13 +365,13 @@
       <button class="btn" type="submit" method="post">Flag</button>
       <input type="hidden" name="challenge_title" value="crypto4">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
-      <label class="close" for="popup-4">Close</label>
+      <label class="close" for="popup-5">Close</label>
     </div>
   </div>
 </div>
 </form>
 
-<input type="checkbox" class="vcms__popup-check" name="popup-5" id="popup-5">
+<input type="checkbox" class="vcms__popup-check" name="popup-6" id="popup-6">
 <div class="vcms__popup">
   <div class="inner">
     <div class="header">
@@ -346,14 +385,14 @@
          Hint1: 이 RSA는 취약합니다.<br>
          Hint2: d가 작습니다.
       </p>
-      <p><a href='crypto/download_crypto2'>key.txt</a></p>
+      <p><a href='crypto/key.txt'>key.txt</a></p>
     </div>
     <form action="/challenge/flag" method="post">
     <div class="footer">
       <button class="btn" type="submit" method="post">Flag</button>
       <input type="hidden" name="challenge_title" value="crypto5">
       <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
-      <label class="close" for="popup-5">Close</label>
+      <label class="close" for="popup-6">Close</label>
     </div>
   </div>
 </div>

@@ -14,6 +14,28 @@
           <div class="face face1">
             <div class="content">
                <i class="fab fa-windows"></i>            
+              <h3>[튜토리얼]</h3>
+              <br>
+              <h3>Easy</h3>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <br>
+              <p> Points : 50pt</p>
+              <br>
+              <p> Examiner : 장현호</p>
+              <br>
+              <div class="triggers">
+                <label for="popup-1">Challenge</label>
+              </div>
+            </div>
+          </div>
+       </div>
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+               <i class="fab fa-windows"></i>            
               <h3>Challenge1</h3>
               <br>
               <h3>Easy</h3>
@@ -27,7 +49,7 @@
               <p> Examiner : 장현호</p>
               <br>
               <div class="triggers">
-                <label for="popup-1">Challenge</label>
+                <label for="popup-2">Challenge</label>
               </div>
             </div>
           </div>
@@ -50,7 +72,7 @@
             <p> Examiner : 장현호</p>
             <br>
             <div class="triggers">
-              <label for="popup-2">Challenge</label>
+              <label for="popup-3">Challenge</label>
             </div>
           </div>
         </div>
@@ -74,7 +96,7 @@
           <p> Examiner : 장현호</p>
           <br>
           <div class="triggers">
-            <label for="popup-3">Challenge</label>
+            <label for="popup-4">Challenge</label>
           </div>
         </div>
       </div>
@@ -82,18 +104,18 @@
   </div>
   
      
-  
+
   <input type="checkbox" class="vcms__popup-check" name="popup-1" id="popup-1">
   <div class="vcms__popup">
     <div class="inner">
       <div class="header">
-        Challenge1
+        [튜토리얼]
       </div>
       <div class="txt">
-        <p><b>Warmup of Reversing</b></p>
+        <p><b>리버싱 튜토리얼</b></p>
         <br>
-        <p>리버싱을 시작하신 걸 환영합니다</p>
-        <p><a href='reversing/download_reversing1'>Warmup of Reversing</a></p>  
+        <p>이 파일은 플래그를 출력한 직후 바로 종료합니다.
+        <p><a href='reversing/tutorial.exe'>tutorial.exe</a></p>
       </div>
       <form action="/challenge/flag" method="post">
       <div class="footer">
@@ -105,23 +127,25 @@
     </div>
   </div>
   </form>
+
+
   
   <input type="checkbox" class="vcms__popup-check" name="popup-2" id="popup-2">
   <div class="vcms__popup">
     <div class="inner">
       <div class="header">
-        Challenge2
+        Challenge1
       </div>
       <div class="txt">
-        <p><b>Reversing1</b></p>
+        <p><b>Warmup of Reversing</b></p>
         <br>
-        <p>간단한 사용법 익혀보아요</p>
-        <p><a href='reversing/download_reversing2'>reversing1_chall</a></p>  
+        <p>리버싱을 시작하신 걸 환영합니다</p>
+        <p><a href='reversing/Warmup_of_reversing_chall'>Warmup of Reversing</a></p>  
       </div>
       <form action="/challenge/flag" method="post">
       <div class="footer">
         <button class="btn" type="submit" method="post">Flag</button>
-        <input type="hidden" name="challenge_title" value="reversing2">
+        <input type="hidden" name="challenge_title" value="reversing1">
         <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
         <label class="close" for="popup-2">Close</label>
       </div>
@@ -133,6 +157,29 @@
   <div class="vcms__popup">
     <div class="inner">
       <div class="header">
+        Challenge2
+      </div>
+      <div class="txt">
+        <p><b>Reversing1</b></p>
+        <br>
+        <p>간단한 사용법 익혀보아요</p>
+        <p><a href='reversing/reversing1_chall'>reversing1_chall</a></p>  
+      </div>
+      <form action="/challenge/flag" method="post">
+      <div class="footer">
+        <button class="btn" type="submit" method="post">Flag</button>
+        <input type="hidden" name="challenge_title" value="reversing2">
+        <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+        <label class="close" for="popup-3">Close</label>
+      </div>
+    </div>
+  </div>
+  </form>
+  
+  <input type="checkbox" class="vcms__popup-check" name="popup-4" id="popup-4">
+  <div class="vcms__popup">
+    <div class="inner">
+      <div class="header">
         Challenge3
       </div>
       <div class="txt">
@@ -140,14 +187,14 @@
         <br>
         <p>코드를 작성하거나 일일이 플래그를 구하는 방법이 있습니다</p>
         <br>
-        <p><a href='reversing/download_reversing3'>reversing2_chall</a></p>  
+        <p><a href='reversing/reversing2_chall'>reversing2_chall</a></p>  
       </div>
       <form action="/challenge/flag" method="post">
       <div class="footer">
         <button class="btn" type="submit" method="post">Flag</button>
         <input type="hidden" name="challenge_title" value="reversing3">
         <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
-        <label class="close" for="popup-3">Close</label>
+        <label class="close" for="popup-4">Close</label>
       </div>
     </div>
   </div>
