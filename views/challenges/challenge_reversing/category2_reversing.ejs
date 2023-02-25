@@ -1,0 +1,266 @@
+<html>
+
+    <head>
+    <title>CUHACTF_Challenges</title>
+    <%-include('../../common/sub_head.ejs') %>
+    </head>
+
+    <%-include('../../common/header.ejs') %>
+
+    <body>
+      <%-include('../../common/challenges.ejs') %>
+      <div class="container">
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+               <i class="fab fa-windows"></i>            
+              <h3>Challenge1</h3>
+              <br>
+              <h3>Easy</h3>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <br>
+              <p> Points : 100pt</p>
+              <br>
+              <p> Examiner : 장현호</p>
+              <br>
+              <div class="triggers">
+                <label for="popup-1">Challenge</label>
+              </div>
+            </div>
+          </div>
+       </div>
+       
+       <div class="card">
+        <div class="face face1">
+          <div class="content">
+             <i class="fab fa-windows"></i>            
+            <h3>Challenge2</h3>
+            <br>
+            <h3>Normal</h3>
+          </div>
+        </div>
+        <div class="face face2">
+          <div class="content">
+            <br>
+            <p> Points : 300pt</p>
+            <br>
+            <p> Examiner : 장현호</p>
+            <br>
+            <div class="triggers">
+              <label for="popup-2">Challenge</label>
+            </div>
+          </div>
+        </div>
+     </div>
+       
+       
+     <div class="card">
+      <div class="face face1">
+        <div class="content">
+           <i class="fab fa-windows"></i>            
+          <h3>Challenge3</h3>
+          <br>
+          <h3>Hard</h3>
+        </div>
+      </div>
+      <div class="face face2">
+        <div class="content">
+          <br>
+          <p> Points : 500pt</p>
+          <br>
+          <p> Examiner : 장현호</p>
+          <br>
+          <div class="triggers">
+            <label for="popup-3">Challenge</label>
+          </div>
+        </div>
+      </div>
+   </div>
+  </div>
+  
+     
+  
+  <input type="checkbox" class="vcms__popup-check" name="popup-1" id="popup-1">
+  <div class="vcms__popup">
+    <div class="inner">
+      <div class="header">
+        Challenge1
+      </div>
+      <div class="txt">
+        <p><b>Warmup of Reversing</b></p>
+        <br>
+        <p>리버싱을 시작하신 걸 환영합니다</p>
+        <p><a href='reversing/download_reversing1'>Warmup of Reversing</a></p>  
+      </div>
+      <form action="/challenge/flag" method="post">
+      <div class="footer">
+        <button class="btn" type="submit" method="post">Flag</button>
+        <input type="hidden" name="challenge_title" value="reversing1">
+        <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+        <label class="close" for="popup-1">Close</label>
+      </div>
+    </div>
+  </div>
+  </form>
+  
+  <input type="checkbox" class="vcms__popup-check" name="popup-2" id="popup-2">
+  <div class="vcms__popup">
+    <div class="inner">
+      <div class="header">
+        Challenge2
+      </div>
+      <div class="txt">
+        <p><b>Reversing1</b></p>
+        <br>
+        <p>간단한 사용법 익혀보아요</p>
+        <p><a href='reversing/download_reversing2'>reversing1_chall</a></p>  
+      </div>
+      <form action="/challenge/flag" method="post">
+      <div class="footer">
+        <button class="btn" type="submit" method="post">Flag</button>
+        <input type="hidden" name="challenge_title" value="reversing2">
+        <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+        <label class="close" for="popup-2">Close</label>
+      </div>
+    </div>
+  </div>
+  </form>
+  
+  <input type="checkbox" class="vcms__popup-check" name="popup-3" id="popup-3">
+  <div class="vcms__popup">
+    <div class="inner">
+      <div class="header">
+        Challenge3
+      </div>
+      <div class="txt">
+        <p><b>Reversing2</b></p>
+        <br>
+        <p>코드를 작성하거나 일일이 플래그를 구하는 방법이 있습니다</p>
+        <br>
+        <p><a href='reversing/download_reversing3'>reversing2_chall</a></p>  
+      </div>
+      <form action="/challenge/flag" method="post">
+      <div class="footer">
+        <button class="btn" type="submit" method="post">Flag</button>
+        <input type="hidden" name="challenge_title" value="reversing3">
+        <input class="flag" id="flag" type="text" name='flag' placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+        <label class="close" for="popup-3">Close</label>
+      </div>
+    </div>
+  </div>
+  </form>
+  <!--
+  <input type="checkbox" class="vcms__popup-check" name="popup-4" id="popup-4">
+  <div class="vcms__popup">
+    <div class="inner">
+      <div class="header">
+        Challenge4
+      </div>
+      <div class="txt">
+        <p>Contents</p>
+        <p>Hint : </p>  
+      </div>
+      <div class="footer">
+        <a class="btn" href="#">Flag</a>
+        <input class="flag" id="flag" type="text" placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+        <label class="close" for="popup-4">Close</label>
+      </div>
+    </div>
+  </div>
+  
+  <input type="checkbox" class="vcms__popup-check" name="popup-5" id="popup-5">
+  <div class="vcms__popup">
+    <div class="inner">
+      <div class="header">
+        Challenge5
+      </div>
+      <div class="txt">
+        <p>Contents</p>
+        <p>Hint : </p>  
+      </div>
+      <div class="footer">
+        <a class="btn" href="#">Flag</a>
+        <input class="flag" id="flag" type="text" placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+        <label class="close" for="popup-5">Close</label>
+      </div>
+    </div>
+  </div>
+  
+  <input type="checkbox" class="vcms__popup-check" name="popup-6" id="popup-6">
+  <div class="vcms__popup">
+    <div class="inner">
+      <div class="header">
+        Challenge6
+      </div>
+      <div class="txt">
+        <p>Contents</p>
+        <p>Hint : </p>  
+      </div>
+      <div class="footer">
+        <a class="btn" href="#">Flag</a>
+        <input class="flag" id="flag" type="text" placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+        <label class="close" for="popup-6">Close</label>
+      </div>
+    </div>
+  </div>
+  
+  <input type="checkbox" class="vcms__popup-check" name="popup-7" id="popup-7">
+  <div class="vcms__popup">
+    <div class="inner">
+      <div class="header">
+        Challenge7
+      </div>
+      <div class="txt">
+        <p>Contents</p>
+        <p>Hint : </p>  
+      </div>
+      <div class="footer">
+        <a class="btn" href="#">Flag</a>
+        <input class="flag" id="flag" type="text" placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+        <label class="close" for="popup-7">Close</label>
+      </div>
+    </div>
+  </div>
+  
+  <input type="checkbox" class="vcms__popup-check" name="popup-8" id="popup-8">
+  <div class="vcms__popup">
+    <div class="inner">
+      <div class="header">
+        Challenge8
+      </div>
+      <div class="txt">
+        <p>Contents</p>
+        <p>Hint : </p>  
+      </div>
+      <div class="footer">
+        <a class="btn" href="#">Flag</a>
+        <input class="flag" id="flag" type="text" placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+        <label class="close" for="popup-8">Close</label>
+      </div>
+    </div>
+  </div>
+  
+  <input type="checkbox" class="vcms__popup-check" name="popup-9" id="popup-9">
+  <div class="vcms__popup">
+    <div class="inner">
+      <div class="header">
+        Challenge9
+      </div>
+      <div class="txt">
+        <p>Contents</p>
+        <p>Hint : </p>  
+      </div>
+      <div class="footer">
+        <a class="btn" href="#">Flag</a>
+        <input class="flag" id="flag" type="text" placeholder="CUHA{c_u_h_a_f_l_a_g}" />
+        <label class="close" for="popup-9">Close</label>
+      </div>
+    </div>
+  </div>
+  -->
+    </body>
+
+</html>

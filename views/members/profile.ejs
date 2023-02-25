@@ -1,0 +1,41 @@
+<html>
+
+    <head>
+    <title>CUHACTF_Profile</title>
+    <%-include('../common/sub_head.ejs') %>
+    </head>
+
+    <%-include('../common/header.ejs') %>
+    <link rel="stylesheet" href="stylesheets/profile_card.css">
+    <script type="text/javascript" src="../../js/profile_card.js"></script>
+    
+    <div class="wrapper">
+        <div class="profile-card js-profile-card">
+      
+          <div class="profile-card__cnt js-profile-cnt">
+            <br>
+            <br>
+            <br>
+            <div class="profile-card__name"><%= profile.nickname %></div>
+            <br>
+            <div class="profile-card__txt">email :  <strong><%= profile.email %></strong></div>
+            <div class="profile-card-loc">
+              <span class="profile-card-loc__icon">
+                <svg class="icon"><use xlink:href="#icon-location"></use></svg>
+              </span>
+            </div>
+      
+              <div class="profile-card-inf__item">
+                <div class="profile-card-inf__title"><%= profile.solved %></div>
+                <div class="profile-card-inf__txt">Solved Challenges</div>
+              </div>
+      
+              <div class="profile-card-inf__item">
+                <div class="profile-card-inf__title"><%= profile.point %></div>
+                <div class="profile-card-inf__txt">Pointes</div>
+              </div>
+            </div>
+        </defs>
+      </svg>
+
+</html>

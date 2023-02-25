@@ -1,0 +1,54 @@
+<html>
+    <head>
+    <title>CUHACTF_Scoreboard</title>
+    <%-include('../common/sub_head.ejs') %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="../../stylesheets/scoreboard_table.css">
+    <link rel="stylesheet" href="../../stylesheets/scoreboard_ranking.css">
+    </head>
+    <%-include('../common/header.ejs') %>
+    <body>
+        
+      <section id="scrims-ladder--container" class="scrims-ladder">
+        <div class="ladder-nav">
+          <div class="ladder-nav--col ladder-title">
+            <h1>Scoreboard</h1>
+          </div>
+        </div>
+        <div class="ladder-nav--results">
+          <div class="ladder-nav--results-col">
+            <label>Rank</label>
+          </div>
+          <div class="ladder-nav--results-col">
+            <label>Team Name</label>
+          </div>
+          <div class="ladder-nav--results-col">
+            <label>Latest Solve</label>
+          </div>
+          <div class="ladder-nav--results-col">
+            <label>Points</label>
+          </div>
+        </div>
+        <% if(locals.rank){ %>
+            <% for(var i = 0;i<rank.length;i++) { %>
+        <div class="ladder-nav--results-players">
+          <div class="results-col">
+            <span class="results-rank"><span class="positions"><%= i+1%></span></span>
+          </div>
+          <div class="results-col">
+            <span class="results-team"><%= rank[i].nickname%></span>
+          </div>
+          <div class="results-col">
+            <span class="results-gp"><%= rank[i].solved%></span>
+          </div>
+          <div class="results-col">
+            <span class="results-pts"><%= rank[i].point%></span>
+          </div>
+        </div>
+        <% } %>
+          <% } %>  
+        
+      </div>
+</section>
+    </body>
+</html>

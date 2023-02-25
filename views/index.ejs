@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CUHACTF_Home</title>
+    <%-include('common/index_head.ejs')%>
+    <!-- Copyright (c) 2022 Collin Henderson (https://codepen.io/syropian/pen/nJjZaE) -->
+  </head>
+    <%-include('common/header.ejs')%>
+      <body>
+        <canvas id="canvas"></canvas>
+        <div class="container">
+          <h1 class="neonText">
+                CUHA CTF 2022
+          </h1>
+          <h2 class="neonText">Welcome to the CUHA CTF 2022</h2> 
+      
+       </div>
+
+        <article class="white" style="text-align:center;">
+          <br>
+          <br>
+          <br>
+          <br>
+          <h3>CTF Period</h3>
+          <br>
+          <p>Start : 2022-11-19T14:00:00+09:00</p>
+          <p>End : 2022-11-19T18:00:00+09:00</p>
+          <br>
+          <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+          <a href="https://logwork.com/countdown-wijv" class="countdown-timer" data-timezone="Asia/Seoul" data-language="ko" data-date="2022-11-19 14:00" data-textcolor="#ffffff" data-date="2022-09-26 20:20" data-unitscolor="#ffffff">Countdown</a>
+          <br>
+          <br>
+          <br>
+          <a href="https://discord.gg/5KuUTd9PUH"><img class="discord_img" src="https://img.icons8.com/ios/200/000000/discord.png"/></a>
+          <br>
+          <br>
+          <p>If you want help, Click to discord server!!!</p>
+          <br>
+        </article>
+        <p style="font-size:4rem;text-align: center;color:white;">sponsor</p>
+        <center>
+          <img src="/img/image.png">
+          <img src="/img/image2.png">
+        </center>
+     <section class="stacked-cards">
+        <div class="section-header">
+          <h2>
+            who <br>
+            made <br>
+            CUHA <br>
+            CTF <br>
+            2022 <br>
+          </h2>
+        </div>
+        <div class="card-grid">
+          <div class="childs">
+            <article class="child">
+              <h2><a href="#">Developer, Examiner</a></h2>
+              <p>
+                김광운
+              </p>
+              <p>
+                CUHA 동아리 회장
+              </p>
+              <div class="buttons">
+                <a href="https://kilkat.tistory.com/"><button class="button detail"> link </button></a>
+              </div>
+            </article>
+            <article class="child">
+              <h2><a href="#">Developer, Examiner</a></h2>
+              <p>
+                장현호
+              </p>
+              <p>
+                CUHA 동아리 회원
+              </p>
+              <p>
+                Client 동아리 회원
+              </p>
+              <div class="buttons">
+                <a href="https://github.com/CyberSecurityHat"><button class="button detail"> link </button></a>
+              </div>
+            </article>
+          </article>
+          <article class="child">
+            <h2><a href="#">Developer, Examiner</a></h2>
+            <p>
+              유지민
+            </p>
+            <p>
+              CUHA 동아리 회원
+            </p>
+            <p>
+              Client 동아리 회원
+            </p>
+          </article>
+        </div>
+      </section>
+    </footer>
+    
+  </body>
+  <script>
+    var canvas = document.getElementById("canvas")
+    context = canvas.getContext( '2d' );
+    context.globalCompositeOperation = 'lighter';
+    canvas.width = 1280;
+    canvas.height = 800;
+    draw();
+
+    var textStrip = ['0','1'];
+
+    var stripCount = 60, stripX = new Array(), stripY = new Array(), dY = new Array(), stripFontSize = new Array();
+
+    for (var i = 0; i < stripCount; i++) {
+        stripX[i] = Math.floor(Math.random()*1265);
+        stripY[i] = -100;
+        dY[i] = Math.floor(Math.random()*7)+3;
+        stripFontSize[i] = Math.floor(Math.random()*16)+8;
+    }
+
+    var theColors = ['#cefbe4', '#81ec72', '#5cd646', '#54d13c', '#4ccc32', '#43c728'];
+
+    var elem, context, timer;
+
+function drawStrip(x, y) {
+    for (var k = 0; k <= 20; k++) {
+        var randChar = textStrip[Math.floor(Math.random()*textStrip.length)];
+        if (context.fillText) {
+            switch (k) {
+            case 0:
+                context.fillStyle = theColors[0]; break;
+            case 1:
+                context.fillStyle = theColors[1]; break;
+            case 3:
+                context.fillStyle = theColors[2]; break;
+            case 7:
+                context.fillStyle = theColors[3]; break;
+            case 13:
+                context.fillStyle = theColors[4]; break;
+            case 17:
+                context.fillStyle = theColors[5]; break;
+            }
+            context.fillText(randChar, x, y);
+        }
+        y -= stripFontSize[k];
+    }
+}
+
+function draw() {
+    // clear the canvas and set the properties
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.shadowOffsetX = context.shadowOffsetY = 0;
+    context.shadowBlur = 8;
+    context.shadowColor = '#94f475';
+    
+    for (var j = 0; j < stripCount; j++) {
+        context.font = stripFontSize[j]+'px MatrixCode';
+        context.textBaseline = 'top';
+        context.textAlign = 'center';
+        
+        if (stripY[j] > 1358) {
+            stripX[j] = Math.floor(Math.random()*canvas.width);
+            stripY[j] = -100;
+            dY[j] = Math.floor(Math.random()*7)+3;
+            stripFontSize[j] = Math.floor(Math.random()*16)+8;
+            drawStrip(stripX[j], stripY[j]);
+        } else drawStrip(stripX[j], stripY[j]);
+        
+        stripY[j] += dY[j];
+    }
+  setTimeout(draw, 70);
+}
+
+
+  </script>
+
+
+</html>

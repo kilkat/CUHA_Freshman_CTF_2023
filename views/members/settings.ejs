@@ -1,0 +1,49 @@
+<html>
+
+    <head>
+    <title>CUHACTF_Settings</title>
+    <%-include('../common/sub_head.ejs') %>
+    <link rel="stylesheet" href="../../stylesheets/settings.css">
+    </head>
+
+    <%-include('../common/header.ejs') %>
+
+    <body>
+     
+      <div class="login-box">
+        <h2>Settings</h2>
+        <form action="/settings/submit" method="post">
+          <div class="user-box">
+            <input type="text" name="email" required="true" value="<%= settings.email %>" readonly>
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="nickname" required="true" value="<%= settings.nickname %>">
+            <label>Nickname</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="student_number" required="true" value="<%=settings.student_number %>">
+            <label>Student Number</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="password" required="true">
+            <label>Password (Update)</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="re_password" required="true">
+            <label>Repassword (Update)</label>
+          </div>
+          <button type="submit" class="btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            submit
+          </button>
+        
+      </div>
+    </form>
+     
+    </body>
+
+</html>
