@@ -47,25 +47,17 @@ router.get("/web1/robots.txt", (req, res) => {
     if(!req.session.is_logined) {
         res.send("<script>alert('로그인 후 이용해주세요');location.href='/login';</script>");
     } else {
-        res.render("challenges/challenge_web/robots/index.ejs");
+        res.render("challenges/challenge_web/robots/robots.ejs");
     }
 });
-
-router.get('/web1/robots.txt', (req, res) => {
-  res.render("challenges/challenge_web/robots/robots.ejs");
-})
 
 router.get("/web1/admin", (req, res) => {
     if(!req.session.is_logined) {
         res.send("<script>alert('로그인 후 이용해주세요');location.href='/login';</script>");
     } else {
-        res.render("challenges/challenge_web/robots/index.ejs");
+        res.render("challenges/challenge_web/robots/admin.ejs");
     }
 });
-
-router.get('/web1/admin', (req, res) => {
-  res.render("challenges/challenge_web/robots/admin.ejs");
-})
 
 router.get("/web3", (req, res) => {
     if(!req.session.is_logined) {
