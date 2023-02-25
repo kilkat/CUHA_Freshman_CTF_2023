@@ -13,6 +13,7 @@ const settings = async(req, res) => {
     const session_password = req.session.password;
     const session_student_number = req.session.student_number;
     const session_nickname = req.session.nickname;
+    const session_name = req.session.name;
 
     // if(email !== session_email){
     //     return res.send("<script>alert('허용되지 않은 접근입니다.');location.href='/settings';</script>");
@@ -25,6 +26,11 @@ const settings = async(req, res) => {
     if(session_email !== req.body.email){
       
         return res.send("<script>alert('이메일은 수정할 수 없습니다.');location.href='/settings';</script>");
+    };
+
+    if(session_name !== req.body.email){
+      
+        return res.send("<script>alert('이름은 수정할 수 없습니다.');location.href='/settings';</script>");
     };
 
     if(nickname.match(nickname_exp) === null || email.match(space_exp) !== null){

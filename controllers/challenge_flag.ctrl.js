@@ -39,9 +39,6 @@ if(user_already === null) {
             challenge_title: user_challenge_title,
             
           });
-        
-
-        console.log(flag_correct.point);
         res.send("<script>alert('정답입니다.');history.back();</script>");
        
     } else {

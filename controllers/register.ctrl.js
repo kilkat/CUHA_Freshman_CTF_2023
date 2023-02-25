@@ -9,13 +9,7 @@ const alphabet_exp = /^[a-zA-Z]*$/; //alphabet regExp
 const space_exp = /\s/g; //space regExp
 const student_number_exp = /^[0-9]{8,10}$/;
     const create_user = async(req, res) => {
-        const {email, password, re_password, nickname, student_number} = req.body;
-
-        console.log(email);
-        console.log(password);
-        console.log(re_password);
-        console.log(nickname);
-        console.log(student_number);
+        const {email, password, re_password, nickname, name, student_number} = req.body;
 
         if(email.match(email_exp) === null || email.match(space_exp) !== null || email.length > 40){
             return res.send("<script>alert('지정된 이메일 형식을 사용하세요. 1~40자리 값만 허용합니다. 또한 공백, 띄어쓰기는 허용하지 않습니다.');location.href='/register';</script>");
@@ -25,8 +19,12 @@ const student_number_exp = /^[0-9]{8,10}$/;
             return res.send("<script>alert('학번은 숫자 형태의 8~10자리 값만 허용합니다.');location.href='/register';</script>");
          }
 
-        if(nickname.match(alphabet_exp) === null || email.match(space_exp) !== null){
-            return res.send("<script>alert('닉네임은 알파벳만 허용합니다. 또한 공백, 띄어쓰기는 허용하지 않습니다.');location.href='/register';</script>");
+        if(nickname.match(alphabet_exp) === null || nickname.match(space_exp) !== null || nickname.length > 20){
+            return res.send("<script>alert('닉네임은 1~20자리 값의 알파벳만 허용합니다. 또한 공백, 띄어쓰기는 허용하지 않습니다.');location.href='/register';</script>");
+        };
+
+        if(name.match(alphabet_exp) === null || name.match(space_exp) !== null || name.length > 40){
+            return res.send("<script>alert('이름은 1~40자리 알파벳만 허용합니다. 또한 공백, 띄어쓰기는 허용하지 않습니다.');location.href='/register';</script>");
         };
 
         if(password.match(password_exp) === null || re_password.match(password_exp) === null || password.match(space_exp) !== null || re_password.match(space_exp) !== null){
@@ -61,6 +59,7 @@ const student_number_exp = /^[0-9]{8,10}$/;
                     email: email,
                     nickname: nickname,
                     student_number: student_number,
+                    name: name,
                     password: password,
                 });
                 })
