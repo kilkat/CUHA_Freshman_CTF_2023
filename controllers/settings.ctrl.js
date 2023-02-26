@@ -28,7 +28,7 @@ const settings = async(req, res) => {
         return res.send("<script>alert('이메일은 수정할 수 없습니다.');location.href='/settings';</script>");
     };
 
-    if(session_name !== req.body.email){
+    if(session_name !== req.body.name){
       
         return res.send("<script>alert('이름은 수정할 수 없습니다.');location.href='/settings';</script>");
     };
