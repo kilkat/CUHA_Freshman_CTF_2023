@@ -6,6 +6,7 @@ const user_rank = async(req, res) => {
         const user_info = await User.findAll({ 
             order:[
                 ['point', "DESC"],
+                ['solved_time', "ASC"],
             ] });
             res.render("challenges/scoreboard.ejs", {session: req.session, rank: user_info})
     }catch(err){

@@ -54,6 +54,11 @@ module.exports = class User extends Sequelize.Model {
           allowNull: false,
           defaultValue: 0,
         },
+        solved_time: {
+          type: 'TIMESTAMP',
+          defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+          allowNull: false,
+        },
       },
       {
         sequelize, //해당 부분에 db.sequelize 객체가 들어간다.

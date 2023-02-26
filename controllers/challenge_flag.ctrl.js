@@ -26,9 +26,12 @@ if(user_already === null) {
         }
         point_num = user.point + flag_correct.point
         solved_num = user.solved + 1
+        const solvedTime = new Date();
+        const solvedTimeStr = solvedTime.toISOString().slice(0, 19).replace('T', ' ');
         User.update({
             point: point_num,
             solved: solved_num,
+            solved_time: solvedTimeStr,
           }, {
             where: { email: req.session.email }
           });
