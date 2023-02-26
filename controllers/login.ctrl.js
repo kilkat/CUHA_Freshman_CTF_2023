@@ -11,11 +11,6 @@ const space_exp = /\s/g; //space regExp
 const login_user = async(req, res) => {
     
     const {email, password} = req.body;
-
-    console.log("login email = " + email);
-    console.log("login password = " + password);
-
-    
    
     if(email.match(email_exp) === null || email.match(space_exp) !== null){
         return res.send("<script>alert('지정된 이메일 형식을 사용하세요. 또한 공백, 띄어쓰기는 허용하지 않습니다.');location.href='/login';</script>");
@@ -32,15 +27,12 @@ const login_user = async(req, res) => {
 
         if(pass) {
             if(ex_user !== null){
-                console.log(ex_user);
-
                 req.session.email = email;
                 req.session.nickname = ex_user.nickname;
+                req.session.name = ex_user.name;
                 req.session.student_number = ex_user.student_number;
                 req.session.is_logined = true;
                 req.session.save(function() {
-                    console.log("-------------------------------------------------------------");
-                    console.log("login.ctrl.js session = " + JSON.stringify(req.session, null, 2));
                 });
                 return res.redirect("/");
             }else{
