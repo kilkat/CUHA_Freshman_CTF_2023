@@ -7,6 +7,7 @@ const email_exp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z
 const nickname_exp = /^[a-zA-Z]{1,20}$/;
 const student_number_exp = /^[0-9]{8,10}$/;
 const bcrypt = require("bcrypt");
+const Already_solved = require("../models/already_solved");
 const settings = async(req, res) => {
     const {password, re_password, nickname, email, student_number} = req.body;
     const session_email = req.session.email;
@@ -68,7 +69,7 @@ const settings = async(req, res) => {
 
     await User.update({nickname: changed_nickname}, {where: {email:session_email}});
     await User.update({student_number: changed_student_number}, {where: {email:session_email}});
-   
+    await Already_solved.update({nickname: changed_nickname}, {where: {nickname:session_nickname}});
     bcrypt.hash(password, 10, (err, password) => {
         User.update({password: password}, {where: {email:session_email}});
     });
