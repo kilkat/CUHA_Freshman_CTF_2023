@@ -15,9 +15,6 @@ const settings = async(req, res) => {
     const session_nickname = req.session.nickname;
     const session_name = req.session.name;
 
-    // if(email !== session_email){
-    //     return res.send("<script>alert('허용되지 않은 접근입니다.');location.href='/settings';</script>");
-    //  };
     const user_info = await User.findOne({where: {email: session_email}, attributes: ["email", "nickname", "point", "solved"]});
 
     const exUser1 = await User.findOne({ where: {nickname: nickname}});
@@ -53,9 +50,6 @@ const settings = async(req, res) => {
         return res.send("<script>alert('학번은 숫자 형태의 8~10자리 값만 서용합니다.');location.href='/settings';</script>");
     } 
 
-// console.log("11111111111111111111\n" + session_nickname + "\n111111111111111111111111")
-// console.log("222222222222222222\n" + session_student_number + "\n22222222222222222222")
-
     if(session_nickname != nickname){
         var changed_nickname = nickname;
         const compare_nickname = await User.findOne({ where: {nickname: nickname}});
@@ -72,17 +66,6 @@ const settings = async(req, res) => {
         }
     }
 
-
-/*
-    if (exUser1 !== null && exUser1.nickname !== nickname) {
-        return res.send("<script>alert('중복된 닉네임이 있습니다.');location.href='/settings';</script>");
-    }
-
-    if (exUser2 !== null && exUser2.student_number !== student_number) {
-        return res.send("<script>alert('중복된 학번이 있습니다.');location.href='/settings';</script>");
-    }
-*/
-
     await User.update({nickname: changed_nickname}, {where: {email:session_email}});
     await User.update({student_number: changed_student_number}, {where: {email:session_email}});
    
@@ -93,7 +76,6 @@ const settings = async(req, res) => {
     req.session.destroy(function(){ 
         req.session;
         });
-    // console.log("3333333333333333333\n" + req.session + "\n333333333333333333333")
     return res.redirect("/login");
 
 
