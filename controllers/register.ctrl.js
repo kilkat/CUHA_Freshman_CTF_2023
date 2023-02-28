@@ -68,7 +68,6 @@ const student_number_exp = /^[0-9]{8,10}$/;
                 return res.send("<script>alert('중복된 정보가 있습니다.');location.href='/register';</script>");
             }
             }catch(err){
-                console.log(err);
                 return res.send("<script>alert('오류가 발생했습니다.');location.href='/register';</script>");
             }
         }
