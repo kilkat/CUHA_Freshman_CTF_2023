@@ -55,8 +55,8 @@ module.exports = class User extends Sequelize.Model {
           defaultValue: 0,
         },
         solved_time: {
-          type: 'TIMESTAMP',
-          defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+          type: 'TIMESTAMP(6)',
+          defaultValue: Sequelize.literal('CURRENT_TIMESTAMP(6)'),
           allowNull: false,
         },
       },

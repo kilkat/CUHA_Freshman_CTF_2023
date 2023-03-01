@@ -23,8 +23,8 @@ module.exports = class Already_solved extends Sequelize.Model {
         unique: false,
         },
         solved_time: {
-          type: 'TIMESTAMP',
-          defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+          type: 'TIMESTAMP(6)',
+          defaultValue: Sequelize.literal('CURRENT_TIMESTAMP(6)'),
           allowNull: false,
         },
         

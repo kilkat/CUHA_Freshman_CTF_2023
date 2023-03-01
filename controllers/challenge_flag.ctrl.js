@@ -4,6 +4,9 @@ const Already_solved  = require("../models/already_solved");
 const Flag = require("../models/flag");
 const User = require("../models/users");
 const web = 'web'
+
+
+
 const challenge_flag = async(req, res) => {
     const user_flag = req.body.flag;
     const user_challenge_title = req.body.challenge_title;
@@ -26,12 +29,21 @@ if(user_already === null) {
         }
         point_num = user.point + flag_correct.point
         solved_num = user.solved + 1
-        const solvedTime = new Date();
-        const solvedTimeStr = solvedTime.toISOString().slice(0, 19).replace('T', ' ');
+
+        date = new Date();
+        yyyy = date.getFullYear().toString().padStart(4, '0');
+        mm = (date.getMonth() + 1).toString().padStart(2, '0');
+        dd = date.getDate().toString().padStart(2, '0');
+        hh = date.getHours().toString().padStart(2, '0');
+        min = date.getMinutes().toString().padStart(2, '0');
+        ss = date.getSeconds().toString().padStart(2, '0');
+        sss = date.getMilliseconds().toString().padStart(6, '0');
+        now_date = `${yyyy}-${mm}-${dd} ${hh}:${min}:${ss}.${sss}`;
+        
         User.update({
             point: point_num,
             solved: solved_num,
-            solved_time: solvedTimeStr,
+            solved_time: now_date
           }, {
             where: { email: req.session.email }
           });
@@ -40,6 +52,7 @@ if(user_already === null) {
             
             nickname:req.session.nickname,
             challenge_title: user_challenge_title,
+            solved_time: now_date
             
           });
         res.send("<script>alert('정답입니다.');history.back();</script>");
