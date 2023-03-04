@@ -9,6 +9,8 @@ const authRouter = require("./auth");
 const scoreboardRouter = require("./scoreboard");
 const settingsRouter = require("./settings");
 
+const rulesRouter = require("./rules")
+
 const profileRouter = require("./profile");
 
 const challenge_webRouter = require("./challenge_web");
@@ -51,6 +53,8 @@ router.use("/challenge/reversing", challenge_reversingRouter);
 router.use("/challenge/crypto", challenge_cryptoRouter);
 
 router.use("/challenge/flag", challenge_flagRouter);
+
+router.use("/rules", rulesRouter);
 
 router.use("/settings", settingsRouter);
 
