@@ -9,7 +9,7 @@ const student_number_exp = /^[0-9]{8,10}$/;
 const bcrypt = require("bcrypt");
 const Already_solved = require("../models/already_solved");
 const settings = async(req, res) => {
-    const {password, re_password, nickname, email, student_number} = req.body;
+    const {password, re_password, now_password, nickname, email, student_number} = req.body;
     const session_email = req.session.email;
     const session_password = req.session.password;
     const session_student_number = req.session.student_number;
@@ -31,25 +31,25 @@ const settings = async(req, res) => {
         return res.send("<script>alert('이름은 수정할 수 없습니다.');location.href='/settings';</script>");
     };
 
-    if(nickname.match(nickname_exp) === null || email.match(space_exp) !== null){
+    if(nickname.match(nickname_exp) === null || email.match(space_exp) !== null || !(1 <= nickname.length <= 20)){
         return res.send("<script>alert('닉네임은 알파벳형태의 1~20자리 값만 허용합니다. 또한 공백, 띄어쓰기는 허용하지 않습니다.');location.href='/settings';</script>");
     };
 
-    if(password.match(password_exp) === null || re_password.match(password_exp) === null || password.match(space_exp) !== null || re_password.match(space_exp) !== null){
+    if(!(bcrypt.compare(password, now_password))) {
+        return res.send("<script>alert('Now Password가 일치하지 않습니다.');location.href='/settings';</script>")
+    };
+
+    if(password.match(password_exp) === null || re_password.match(password_exp) === null || password.match(space_exp) !== null || re_password.match(space_exp) !== null || !(8 <= password.length <= 18)){
         return res.send("<script>alert('비밀번호 형식은 숫자, 문자, 특수문자 포함 형태의 8~18자리 값만 허용됩니다. 또한 공백, 띄어쓰기는 허용하지 않습니다.');location.href='/settings';</script>");
     };
 
     if(password !== re_password) {
-        return res.send("<script>alert('비밀번호가 일치하지 않습니다.');location.href='/settings';</script>")
+        return res.send("<script>alert('Repassword가 일치하지 않습니다.');location.href='/settings';</script>")
     };
 
-    if(student_number.match(student_number_exp) === null){
+    if(student_number.match(student_number_exp) === null || !(8 <= student_number.length <= 10)){
         return res.send("<script>alert('학번은 숫자 형태의 8~10자리 값만 서용합니다.');location.href='/settings';</script>");
-    } 
-
-    if(student_number.match(student_number_exp) === null){
-        return res.send("<script>alert('학번은 숫자 형태의 8~10자리 값만 서용합니다.');location.href='/settings';</script>");
-    } 
+    }
 
     if(session_nickname != nickname){
         var changed_nickname = nickname;
