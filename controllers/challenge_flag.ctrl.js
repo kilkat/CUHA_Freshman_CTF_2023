@@ -30,8 +30,6 @@ if(user_already === null) {
         point_num = user.point + flag_correct.point
         solved_num = user.solved + 1
 
-        kst = 
-
         date = new Date();
 
         yyyy = date.getUTCFullYear().toString().padStart(4, '0');
