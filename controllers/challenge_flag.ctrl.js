@@ -15,8 +15,6 @@ const challenge_flag = async(req, res) => {
     const user_already = await Already_solved.findOne({where: {challenge_title:user_challenge_title,nickname:req.session.nickname},raw:true});
     const first_blood = await First_blood.findOne({where: {type : user_challenge_title}});
 
-    console.log(user_already)
-
 if(user_already === null) {
     if(flag_correct.flag === user_flag) {
         if(first_blood === null) {
