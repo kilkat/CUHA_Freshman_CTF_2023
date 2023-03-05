@@ -30,14 +30,17 @@ if(user_already === null) {
         point_num = user.point + flag_correct.point
         solved_num = user.solved + 1
 
+        kst = 
+
         date = new Date();
-        yyyy = date.getFullYear().toString().padStart(4, '0');
-        mm = (date.getMonth() + 1).toString().padStart(2, '0');
-        dd = date.getDate().toString().padStart(2, '0');
-        hh = date.getHours().toString().padStart(2, '0');
-        min = date.getMinutes().toString().padStart(2, '0');
-        ss = date.getSeconds().toString().padStart(2, '0');
-        sss = date.getMilliseconds().toString().padStart(6, '0');
+
+        yyyy = date.getUTCFullYear().toString().padStart(4, '0');
+        mm = (date.getUTCMonth() + 1).toString().padStart(2, '0');
+        dd = date.getUTCDate().toString().padStart(2, '0');
+        hh = date.getUTCHours().toString().padStart(2, '0');
+        min = date.getUTCMinutes().toString().padStart(2, '0');
+        ss = date.getUTCSeconds().toString().padStart(2, '0');
+        sss = date.getUTCMilliseconds().toString().padStart(6, '0');
         now_date = `${yyyy}-${mm}-${dd} ${hh}:${min}:${ss}.${sss}`;
         
         User.update({

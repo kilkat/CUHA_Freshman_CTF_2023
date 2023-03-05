@@ -29,11 +29,9 @@ html {
   }
   
   .content-box {
-    width: 1500px;
+    width: auto;
     min-height: 450px;
     margin: 40px auto;
-    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6);
-    background: #fff;
     border-radius: 12px;
     position: relative;
     background: rgba(0,0,0,.5);
