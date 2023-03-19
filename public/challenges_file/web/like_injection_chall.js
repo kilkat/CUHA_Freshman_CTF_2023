@@ -13,7 +13,7 @@ const challenge_web2 = async(req, res) => {
    if(id.match(sql_exp) !== null) {
         return res.send("<script>alert('no hack');location.href='/challenge/web/web2';</script>");
     }   
-    const sql = connection.query('SELECT * FROM Web2 where id =' + "'" + params + "'" + 'and pw =' + "'" + params2 + "'" , function(err, rows) {
+    const sql = connection.query('SELECT * FROM Web4 where id =' + "'" + params + "'" + 'and pw =' + "'" + params2 + "'" , function(err, rows) {
             if(rows != undefined) {
         if(rows.length > 0) {
             //YOU CAN GET FLAG

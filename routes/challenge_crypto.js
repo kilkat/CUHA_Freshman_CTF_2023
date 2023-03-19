@@ -16,7 +16,7 @@ router.get("/odt-IV-adb6be87eb09b76d.dat", (req, res) => {
   } else {
     const text = 'odt-IV-adb6be87eb09b76d.dat';  
     res.setHeader('Content-Disposition', `attachment; filename=${text}`); // 이게 핵심 
-    res.sendFile(path.join(__dirname, '../public/challenges_file/crypto', 'odt-IV-adb6be87eb09b76d.dat'));
+    res.sendFile(path.join(__dirname, '../public/challenges_file/crypto', 'odt-IV-cafc3deaddecbcad.dat'));
   }
 });
 
