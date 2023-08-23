@@ -1,4 +1,12 @@
-# cuha_ctf
+# CUHA_CTF_2023
+신입생들을 위한 CUHA배 CTF
 
-* **Upload Rule**
-  * YYYY-MM-DD_nickname
+# How to use
+1. npm i 를 입력하여 필요한 모듈들을 설치함
+2. npm start를 하여 백엔드 서버를 동작함
+3. 127.0.0.1로 접속함
+
+# Images
+![대체 텍스트](./how-to-use/images/index.png)
+![대체 텍스트](./how-to-use/images/challenge.png)
+![대체 텍스트](./how-to-use/images/scoreboard.png)
