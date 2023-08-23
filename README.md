@@ -7,6 +7,9 @@
 3. 127.0.0.1로 접속함
 
 # Images
+1. index_page  
 ![대체 텍스트](./how-to-use/images/index.png)
+2. challenge_page  
 ![대체 텍스트](./how-to-use/images/challenge.png)
+3. scoreboard_page  
 ![대체 텍스트](./how-to-use/images/scoreboard.png)
